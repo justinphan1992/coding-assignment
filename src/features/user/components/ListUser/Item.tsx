@@ -9,7 +9,7 @@ import {
   GlobalOutlined,
 } from '@ant-design/icons';
 
-const { Text, Title } = Typography;
+const { Text, Title, Link } = Typography;
 
 interface ListUserItemProps {
   name: string;
@@ -38,18 +38,18 @@ function Item({ name, username, email, phone, website }: ListUserItemProps) {
         ]}
       >
         <Title level={5}>{name}</Title>
-        <Row align="middle" style={{ columnGap: 8 }}>
-          <MailOutlined />
+        <Row align="middle" style={{ columnGap: 10, marginBottom: 6 }}>
+          <MailOutlined style={{ fontSize: 20 }} />
           <Text>{email}</Text>
         </Row>
 
-        <Row align="middle" style={{ columnGap: 8 }}>
-          <PhoneOutlined />
+        <Row align="middle" style={{ columnGap: 10, marginBottom: 6 }}>
+          <PhoneOutlined style={{ fontSize: 20 }} />
           <Text>{phone}</Text>
         </Row>
-        <Row align="middle" style={{ columnGap: 8 }}>
-          <GlobalOutlined />
-          <Text>{website}</Text>
+        <Row align="middle" style={{ columnGap: 10, marginBottom: 6 }}>
+          <GlobalOutlined style={{ fontSize: 20 }} />
+          <Link href={`https://${website}`}>{`https://${website}`}</Link>
         </Row>
       </Card>
     </Col>
